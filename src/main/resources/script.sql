@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS usuario(
     codigo INT NOT NULL AUTO_INCREMENT,
     nombre VARCHAR(50) NOT NULL,
     telefono VARCHAR(10) NOT NULL,
-    contraseña VARCHAR(150) NOT NULL,    
+    password VARCHAR(150) NOT NULL,    
     PRIMARY KEY (codigo),
     cod_cargo INT NOT NULL,
     FOREIGN KEY (cod_cargo) REFERENCES cargo(codigo)

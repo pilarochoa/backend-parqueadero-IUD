@@ -10,20 +10,25 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table (name = "cargo")
-public class Cargo implements Serializable{
+@Table(name = "tipoVehiculo")
+public class TipoVehiculo implements Serializable{
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 9130139258987386087L;
-
+	private static final long serialVersionUID = 4012638539503318803L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 	
 	@Column(name = "nombre", length = 50, nullable = false)
 	private String nombre;
+	
+	@Column(name = "tarifaMes", nullable = false)
+	private Float tarifaMes;
+    
+    @Column(name = "tarifaDia", nullable = false)
+    private Float tarifaDia;
 
 	public Long getCodigo() {
 		return codigo;
@@ -40,6 +45,23 @@ public class Cargo implements Serializable{
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
-	
+
+	public Float getTarifaMes() {
+		return tarifaMes;
+	}
+
+	public void setTarifaMes(Float tarifaMes) {
+		this.tarifaMes = tarifaMes;
+	}
+
+	public Float getTarifaDia() {
+		return tarifaDia;
+	}
+
+	public void setTarifaDia(Float tarifaDia) {
+		this.tarifaDia = tarifaDia;
+	}
+    
+    
+    
 }

@@ -10,27 +10,30 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table (name = "cargo")
-public class Cargo implements Serializable{
+@Table (name = "menu")
+public class Menu implements Serializable {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 9130139258987386087L;
-
+	private static final long serialVersionUID = 6196184089935757969L;
+	//id INT NOT NULL AUTO_INCREMENT,
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long codigo;
-	
+	private Long id;
+    
 	@Column(name = "nombre", length = 50, nullable = false)
 	private String nombre;
+     
+	@Column(name = "id_cargo", nullable = false)
+	private Long id_cargo;
 
-	public Long getCodigo() {
-		return codigo;
+	public Long getId() {
+		return id;
 	}
 
-	public void setCodigo(Long codigo) {
-		this.codigo = codigo;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getNombre() {
@@ -40,6 +43,16 @@ public class Cargo implements Serializable{
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
+	public Long getId_cargo() {
+		return id_cargo;
+	}
+
+	public void setId_cargo(Long id_cargo) {
+		this.id_cargo = id_cargo;
+	}
 	
 	
+	
+
 }

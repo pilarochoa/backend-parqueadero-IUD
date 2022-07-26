@@ -10,18 +10,18 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table (name = "cargo")
-public class Cargo implements Serializable{
-
+@Table(name = "zona")
+public class Zona implements Serializable {
+	
+	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 9130139258987386087L;
-
+	private static final long serialVersionUID = -7791512324846537983L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
-	
+
 	@Column(name = "nombre", length = 50, nullable = false)
 	private String nombre;
 
@@ -42,4 +42,5 @@ public class Cargo implements Serializable{
 	}
 	
 	
+
 }
