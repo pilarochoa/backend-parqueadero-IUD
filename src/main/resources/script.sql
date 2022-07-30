@@ -61,12 +61,14 @@ CREATE TABLE IF NOT EXISTS registro(
     cod_celda INT NOT NULL,
     fecha_inicio DATE NOT NULL,
     fecha_fin DATE NOT NULL,
+    cod_tipovehiculo INT NOT NULL,
     PRIMARY KEY (codigo),
     cod_cliente INT NOT NULL,
     FOREIGN KEY (cod_cliente) REFERENCES cliente(codigo),
     FOREIGN KEY (cod_usuarioinicia) REFERENCES usuario(codigo),
      FOREIGN KEY (cod_usuariofinaliza) REFERENCES usuario(codigo),
-     FOREIGN KEY (cod_celda) REFERENCES celda(codigo)
+     FOREIGN KEY (cod_celda) REFERENCES celda(codigo),
+     FOREIGN KEY (cod_tipovehiculo) REFERENCES tipovehiculo(codigo)
 
     
 );

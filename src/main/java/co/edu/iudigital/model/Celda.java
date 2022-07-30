@@ -2,11 +2,15 @@ package co.edu.iudigital.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -25,11 +29,13 @@ public class Celda implements Serializable{
     @Column(name = "nombre", length = 50, nullable = false)
     private String nombre;
     
-    @Column(name = "cod_zona", nullable = false)
-    private Long cod_zona;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "cod_zona")
+    private Zona zona;
     
-    @Column(name = "cod_estado", nullable = false)
-    private Long cod_estado;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "cod_estado")
+    private EstadoCelda estadoCelda;
 
 	public Long getCodigo() {
 		return codigo;
@@ -47,22 +53,21 @@ public class Celda implements Serializable{
 		this.nombre = nombre;
 	}
 
-	public Long getCod_zona() {
-		return cod_zona;
+	public Zona getZona() {
+		return zona;
 	}
 
-	public void setCod_zona(Long cod_zona) {
-		this.cod_zona = cod_zona;
+	public void setZona(Zona zona) {
+		this.zona = zona;
 	}
 
-	public Long getCod_estado() {
-		return cod_estado;
+	public EstadoCelda getEstadoCelda() {
+		return estadoCelda;
 	}
 
-	public void setCod_estado(Long cod_estado) {
-		this.cod_estado = cod_estado;
+	public void setEstadoCelda(EstadoCelda estadoCelda) {
+		this.estadoCelda = estadoCelda;
 	}
-    
-    
 
+	
 }

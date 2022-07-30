@@ -2,11 +2,14 @@ package co.edu.iudigital.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -31,8 +34,9 @@ public class Usuario implements Serializable {
 	@Column(name = "password", length = 150, nullable = false)
 	private String password;
 	
-	@Column(name = "cod_cargo", nullable = false)
-	private Long cod_cargo;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "cod_cargo")
+	private Cargo cargo;
 
 	public Long getCodigo() {
 		return codigo;
@@ -66,14 +70,15 @@ public class Usuario implements Serializable {
 		this.password = password;
 	}
 
-	public Long getCod_cargo() {
-		return cod_cargo;
+	public Cargo getCargo() {
+		return cargo;
 	}
 
-	public void setCod_cargo(Long cod_cargo) {
-		this.cod_cargo = cod_cargo;
+	public void setCargo(Cargo cargo) {
+		this.cargo = cargo;
 	}
-	
+
+
 	
 
 }
