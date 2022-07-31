@@ -2,10 +2,16 @@ package co.edu.iudigital.service;
 
 import java.util.List;
 
-import co.edu.iudigital.model.Registro;
+import co.edu.iudigital.dto.RegistroDTO;
 
 public interface IRegistroService {
 	
-	List<Registro> getAll();
+	List<RegistroDTO> findAll();
+	
+	RegistroDTO findById();
+	
+	RegistroDTO save(RegistroDTO registroDTO);
+	
+	void delete(Long codigo);
 
 }

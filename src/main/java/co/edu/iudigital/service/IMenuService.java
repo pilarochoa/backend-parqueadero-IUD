@@ -2,10 +2,15 @@ package co.edu.iudigital.service;
 
 import java.util.List;
 
-import co.edu.iudigital.model.Menu;
+import co.edu.iudigital.dto.MenuDTO;
 
 public interface IMenuService {
 	
-	List<Menu> getALL();
-
+	List<MenuDTO> findAll();
+	
+	MenuDTO findById();
+	
+	MenuDTO save(MenuDTO menuDTO);
+	
+	void delete(Long codigo);
 }
