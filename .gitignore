@@ -31,4 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
-# backend-parqueadero-IUD
+# back-end-helpmeiud-v2
+/src/main/resources/application.properties

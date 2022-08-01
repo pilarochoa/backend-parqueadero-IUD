@@ -3,15 +3,17 @@ package co.edu.iudigital.service;
 import java.util.List;
 
 import co.edu.iudigital.dto.ClienteDTO;
+import co.edu.iudigital.dto.UsuarioDTO;
+import co.edu.iudigital.exception.RestException;
 
 public interface IClienteService {
 	
-	List<ClienteDTO> findAll();
+	List<ClienteDTO> findAll() throws RestException;
+		
+	ClienteDTO findById(Long codigo) throws RestException;
 	
-	ClienteDTO findById();
+	ClienteDTO save(ClienteDTO clienteDTO) throws RestException;
 	
-	ClienteDTO save(ClienteDTO clienteDTO);
-	
-	void delete(Long codigo);
+	void delete(Long codigo) throws RestException;
 
 }

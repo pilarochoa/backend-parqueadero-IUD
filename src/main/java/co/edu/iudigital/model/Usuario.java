@@ -34,7 +34,7 @@ public class Usuario implements Serializable {
 	@Column(name = "password", length = 150, nullable = false)
 	private String password;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne()
 	@JoinColumn(name = "cod_cargo")
 	private Cargo cargo;
 

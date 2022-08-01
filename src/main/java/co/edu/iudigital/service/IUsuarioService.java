@@ -3,15 +3,18 @@ package co.edu.iudigital.service;
 import java.util.List;
 
 import co.edu.iudigital.dto.UsuarioDTO;
+import co.edu.iudigital.exception.RestException;
 
 public interface IUsuarioService {
 
-	List<UsuarioDTO> findAll();
+	List<UsuarioDTO> findAll() throws RestException;
 	
-	UsuarioDTO findById();
+	UsuarioDTO findByNameAndOPassword(String nombre, String password) throws RestException;
 	
-	UsuarioDTO save(UsuarioDTO userDTO);
+	UsuarioDTO findById(Long codigo) throws RestException;
 	
-	void delete(Long codigo);
+	UsuarioDTO save(UsuarioDTO userDTO) throws RestException;
+	
+	void delete(Long codigo) throws RestException;
 
 }

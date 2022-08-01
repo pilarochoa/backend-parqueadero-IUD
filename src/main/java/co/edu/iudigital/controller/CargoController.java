@@ -15,6 +15,10 @@ import co.edu.iudigital.service.ICargoService;
 
 @RestController
 @RequestMapping("/cargo")
+// @Api(value = "/cargo", tags = {("Cargo")})
+/* @SwaggerDefinition (tags = {
+  @Tag(name = "Cargo", description = "Gestion API Cargo")
+}) */
 public class CargoController {
 	
 	private static final Logger log = LoggerFactory.getLogger(CargoController.class); 
@@ -23,6 +27,12 @@ public class CargoController {
 	@Autowired
 	private ICargoService cargoService;
 	
+	/* @ApiOperation(
+			value = "Obtiene los cargo",
+			response = List.class,
+			produces = "application /Json",
+			httpMethod = "GET"
+			) */
 	@GetMapping
 	public ResponseEntity<List<CargoDTO>> index(){
 		log.info("Se consultan los cargos.");
